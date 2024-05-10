@@ -51,7 +51,7 @@ resource "aws_instance" "ec2-instance" {
   instance_type = "t2.micro"
   key_name      = aws_key_pair.key_pair.key_name
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
-  user_data     = "${file("user_data.sh")}"
+  user_data     = "user_data.sh"
 
   tags = {
     Name = "First-Instance"
